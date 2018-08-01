@@ -14,16 +14,19 @@ class RecognizeWav:
 
 
 	def prepareData(self, audioPath):
-		move = "mv " + audioPath + " " + self.dirPath + self.data
+		move = "mv " + self.dirPath + audioPath + " " + self.dirPath + self.data
 
 		print("MOVE CMD: ", move)
-		os.system(move)
+		# os.system(move)
 
 
 		print("Creating wav.scp file")
 		# Create wav.scp file
-		with open('wav.scp', 'w+') as the_file:
-			the_file.write('input-0000 flac -c -d -s ' + audioPath)
+
+		location = self.dirPath + self.data + "wav.scp"
+		print("OPENING wav.scp file in ", location)
+		# with open(self.dirPath'wav.scp', 'w+') as the_file:
+		# 	the_file.write('input-0000 flac -c -d -s ' + audioPath + " |")
 
 
 if __name__ == "__main__":
