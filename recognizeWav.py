@@ -20,7 +20,7 @@ class RecognizeWav:
 
 		location = self.dirPath + self.data + "wav.scp"
 		print("OPENING wav.scp file in ", location)
-		with open(self.dirPath'wav.scp', 'w+') as the_file:
+		with open(self.dirPath + 'wav.scp', 'w+') as the_file:
 			the_file.write('input-0000 flac -c -d -s ' + audioPath + " |")
 
 
