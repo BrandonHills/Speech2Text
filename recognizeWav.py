@@ -4,7 +4,7 @@ import sys
 def main():
 	s2t = RecognizeWav("/home/eundlpoc002adm/brandon-s2t/kaldi/egs/librispeech/s5/")
 
-	s2t.prepareData("data/recognizeWav/inputData/input.flac")
+	s2t.prepareData(s2t.dirPath +"data/recognizeWav/inputData/input.flac")
 
 class RecognizeWav:
 
@@ -14,12 +14,7 @@ class RecognizeWav:
 
 
 	def prepareData(self, audioPath):
-		move = "mv " + self.dirPath + audioPath + " " + self.dirPath + self.data
-
-		print("MOVE CMD: ", move)
-		# os.system(move)
-
-
+		
 		print("Creating wav.scp file")
 		# Create wav.scp file
 
