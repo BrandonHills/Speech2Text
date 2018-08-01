@@ -17,14 +17,14 @@ class RecognizeWav:
 		move = "mv " + audioPath + " " + self.dirPath + self.data
 		os.system(move)
 
+
 		# Create wav.scp file
 		with open('wav.scp', 'w+') as the_file:
 			the_file.write('input-0000 flac -c -d -s ' + self.audioPath)
 
 
-
-
-
+if __name__ == "__main__":
+	main()
 
 
 
