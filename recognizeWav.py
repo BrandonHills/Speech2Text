@@ -5,7 +5,7 @@ import linecache
 def main():
 	s2t = RecognizeWav("/home/eundlpoc002adm/brandon-s2t/kaldi/egs/librispeech/s5/", "data/recognizeWav/")
 
-	s2t.prepareData(s2t.dirPath +"data/recognizeWav/inputData/input.flac")
+	s2t.prepareData(s2t.dirPath +"data/recognizeWav/inputData/input1.flac")
 
 	s2t.runTest()
 
@@ -46,6 +46,16 @@ class RecognizeWav:
 
 if __name__ == "__main__":
 	main()
+
+
+
+1089-134686-0007
+
+
+
+
+
+
 
 
 
