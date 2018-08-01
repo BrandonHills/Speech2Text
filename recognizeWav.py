@@ -40,7 +40,9 @@ class RecognizeWav:
 
 	def returnText(self):
 
-		print(linecache.getline(self.dirPath + self.output, 11))
+		record = linecache.getline(self.dirPath + self.output, 11)
+
+		print(record[11:])
 
 
 
