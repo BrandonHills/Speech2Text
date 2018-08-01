@@ -30,6 +30,7 @@ class RecognizeWav:
 
 	def runTest(self):
 		print("running runChange.sh")
+		os.chdir("../")
 		os.system(self.dirPath + "runChange.sh")
 
 
