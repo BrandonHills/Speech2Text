@@ -1,5 +1,6 @@
 import os
 import sys
+import linecache
 
 def main():
 	s2t = RecognizeWav("/home/eundlpoc002adm/brandon-s2t/kaldi/egs/librispeech/s5/", "data/recognizeWav/")
@@ -8,11 +9,14 @@ def main():
 
 	s2t.runTest()
 
+	s2t.returnText()
+
 class RecognizeWav:
 
 	def __init__(self, dirPath, dataPath):
 		self.dirPath = dirPath
 		self.data = dataPath
+		self.output = "exp/tri2b/decode_nosp_tgsmall_recognizeWav/log/decode.1.log"
 
 
 	def prepareData(self, audioPath):
@@ -30,8 +34,13 @@ class RecognizeWav:
 
 	def runTest(self):
 		print("running runChange.sh")
-		os.chdir("../")
+		os.chdir(self.dirPath)
 		os.system(self.dirPath + "runChange.sh")
+
+	def returnText(self):
+
+		print(linecache.getline(self.dirPath + self.output, 11))
+
 
 
 
