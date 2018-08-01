@@ -20,7 +20,7 @@ class RecognizeWav:
 
 		# Create wav.scp file
 		with open('wav.scp', 'w+') as the_file:
-			the_file.write('input-0000 flac -c -d -s ' + self.audioPath)
+			the_file.write('input-0000 flac -c -d -s ' + audioPath)
 
 
 if __name__ == "__main__":
