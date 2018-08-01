@@ -4,10 +4,11 @@ import linecache
 
 def main():
 
-	s2t = RecognizeWav("/home/eundlpoc002adm/brandon-s2t/kaldi/egs/librispeech/s5/", "data/recognizeWav/")
+	
+	for i in range(15,30):
+		s2t = RecognizeWav("/home/eundlpoc002adm/brandon-s2t/kaldi/egs/librispeech/s5/", "data/recognizeWav/")
 
-	for i in range(0,1):
-		s2t.prepareData(s2t.dirPath +"data/recognizeWav/inputData/input" + str(15) + ".flac")
+		s2t.prepareData(s2t.dirPath +"data/recognizeWav/inputData/input" + str(i) + ".flac")
 
 		s2t.runTest()
 
@@ -33,6 +34,7 @@ class RecognizeWav:
 			the_file.write('input-0000 flac -c -d -s ' + audioPath + " |")
 
 		print("Created wav.scp file in " + location)
+
 
 	def runTest(self):
 		print("running runChange.sh")
