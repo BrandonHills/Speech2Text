@@ -6,11 +6,12 @@ def main():
 
 	s2t = RecognizeWav("/home/eundlpoc002adm/brandon-s2t/kaldi/egs/librispeech/s5/", "data/recognizeWav/")
 
-	s2t.prepareData(s2t.dirPath +"data/recognizeWav/inputData/input10.flac")
+	for i in range(0,37):
+		s2t.prepareData(s2t.dirPath +"data/recognizeWav/inputData/input" + i + ".flac")
 
-	s2t.runTest()
+		s2t.runTest()
 
-	s2t.returnText()
+		s2t.returnText()
 
 class RecognizeWav:
 
