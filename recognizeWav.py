@@ -4,15 +4,19 @@ import linecache
 
 def main():
 
-	
-	for i in range(0,1):
+	if 0 == 0:
 		s2t = RecognizeWav("/home/eundlpoc002adm/brandon-s2t/kaldi/egs/librispeech/s5/", "data/recognizeWav/")
+		s2t.convertMP3toFLAC("Kindly_contact_the_AHD_and_do_the_needful.mp3")
 
-		s2t.prepareData(s2t.dirPath +"data/recognizeWav/inputData/output.flac")
+	if 1 == 0:
+		for i in range(0,1):
+			s2t = RecognizeWav("/home/eundlpoc002adm/brandon-s2t/kaldi/egs/librispeech/s5/", "data/recognizeWav/")
 
-		s2t.runTest()
+			s2t.prepareData(s2t.dirPath +"data/recognizeWav/inputData/output.flac")
 
-		s2t.returnText()
+			s2t.runTest()
+
+			s2t.returnText()
 
 class RecognizeWav:
 
@@ -49,11 +53,13 @@ class RecognizeWav:
 		print(record[11:])
 
 		linecache.clearcache()
+
 	def convertMP3toFLAC(self, path):
-		filepath_wav = 'music.wav'
-		filepath_flac = filepath_wav.replace(".wav", ".flac")
-		audiotools.open(filepath_wav).convert(filepath_flac,
-		                                      audiotools.FlacAudio, compression_quality)
+		print("COMMAND" + "ffmpeg -i " + path " -ar 16000 " + path[:-4] +".flac")
+		# os.sys("ffmpeg -i " + path " -ar 16000 " + path[:-4] +".flac")
+
+
+		
 
 
 
