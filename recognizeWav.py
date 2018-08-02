@@ -6,7 +6,7 @@ def main():
 
 	if 0 == 0:
 		s2t = RecognizeWav("/home/eundlpoc002adm/brandon-s2t/kaldi/egs/librispeech/s5/", "data/recognizeWav/")
-		s2t.convertMP3toFLAC(s2t.dirPath + "Speech2Text/audio/Please_Contact_the_AHD_and_do_the_needful.mp3")
+		s2t.convertMP3toFLAC(s2t.dirPath + "Speech2Text/audio/Kindly_Remind_the_AHD_to_respond_to_my_request.mp3")
 
 	if 1 == 0:
 		for i in range(0,1):
