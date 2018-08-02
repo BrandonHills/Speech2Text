@@ -1,6 +1,7 @@
 import os
 import sys
 import linecache
+import audiotools
 
 def main():
 
@@ -49,6 +50,11 @@ class RecognizeWav:
 		print(record[11:])
 
 		linecache.clearcache()
+	def convertMP3toFLAC(self, path):
+		filepath_wav = 'music.wav'
+		filepath_flac = filepath_wav.replace(".wav", ".flac")
+		audiotools.open(filepath_wav).convert(filepath_flac,
+		                                      audiotools.FlacAudio, compression_quality)
 
 
 
