@@ -56,7 +56,7 @@ class RecognizeWav:
 
 	def convertMP3toFLAC(self, path):
 		print("COMMAND" + "ffmpeg -i " + path + " -ar 16000 " + path[:-4] +".flac")
-		os.sys("ffmpeg -i " + path " -ar 16000 " + path[:-4] +".flac")
+		os.sys("ffmpeg -i " + path + " -ar 16000 " + path[:-4] +".flac")
 
 
 		
