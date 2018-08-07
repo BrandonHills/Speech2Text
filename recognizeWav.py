@@ -9,7 +9,7 @@ import random
 def main():
 	if 0 == 0:
 		s2t = RecognizeWav()
-		s2t.infer(s2t.dirPath +"data/recognizeWav/inputData/input19.flac")
+		print("RETURN: " + s2t.infer(s2t.dirPath +"data/recognizeWav/inputData/input19.flac"))
 
 	if 0 == 1:
 		s2t = RecognizeWav()
