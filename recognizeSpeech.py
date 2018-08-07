@@ -2,36 +2,15 @@ import os
 import sys
 import linecache
 import numpy as np
-import matplotlib.pyplot as plt
-import random
 
 
 def main():
 	if 0 == 0:
-		s2t = RecognizeWav()
+		s2t = RecognizeSpeech()
 		print("RETURN: " + s2t.infer(s2t.dirPath +"data/recognizeWav/inputData/input19.flac"))
 
-	if 0 == 1:
-		s2t = RecognizeWav()
-		s2t.convertMP3toFLAC(s2t.dirPath + "Speech2Text/audio/Kindly_Remind_the_AHD_to_respond_to_my_request.mp3")
 
-	if 0 == 1:
-		for i in range(0,1):
-			s2t = RecognizeWav()
-
-			s2t.prepareData(s2t.dirPath +"data/recognizeWav/inputData/input20.flac")
-
-			s2t.runTest()
-
-			s2t.returnText()
-	if 0 == 1:
-		s2t = RecognizeWav("/home/eundlpoc002adm/brandon-s2t/kaldi/egs/librispeech/s5/", "data/recognizeWav/")
-		
-		s2t.duplicateData("/Users/HillOfFlame/NLP_InfoSys/Speech2Text/audio/output.flac", "/Users/HillOfFlame/NLP_InfoSys/Speech2Text/audio/duplicated/", 5)
-
-
-
-class RecognizeWav:
+class RecognizeSpeech:
 
 	def __init__(self):
 		self.dirPath = "/home/eundlpoc002adm/brandon-s2t/kaldi/egs/librispeech/s5/"
@@ -87,8 +66,6 @@ class RecognizeWav:
 		self.runTest()
 
 		return self.returnText()
-
-
 
 
 
