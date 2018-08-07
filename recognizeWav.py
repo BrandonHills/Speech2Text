@@ -9,7 +9,7 @@ import random
 def main():
 	if 0 == 0:
 		s2t = RecognizeWav()
-		s2t.infer(s2t.dirPath +"data/recognizeWav/inputData/input20.flac")
+		s2t.infer(s2t.dirPath +"data/recognizeWav/inputData/input19.flac")
 
 	if 0 == 1:
 		s2t = RecognizeWav()
@@ -75,8 +75,10 @@ class RecognizeWav:
 	def infer(self, audio_path):
 		self.mp3Location = self.dirPath + 'audio2infer/' + 'input.mp3'
 		self.flacLocation = self.dirPath + 'audio2infer/' + 'input.flac'
+
+		os.system('rm -R ' + self.dirPath + 'audio2infer/')
 		os.system('mkdir ' + self.dirPath + 'audio2infer/')
-		os.system('mv '+audio_path+' '+self.mp3Location)
+		os.system('cp -R '+audio_path+' '+self.mp3Location)
 
 		self.convertMP3toFLAC(self.mp3Location)
 
@@ -84,7 +86,7 @@ class RecognizeWav:
 
 		self.runTest()
 
-		return self.returnTest()
+		return self.returnText()
 
 
 
