@@ -7,7 +7,7 @@ import numpy as np
 def main():
 	if 0 == 0:
 		s2t = RecognizeSpeech()
-		print("RETURN: " + s2t.infer(s2t.dirPath +"Speech2Text/input19.mp3"))
+		print("RETURN: " + s2t.infer(s2t.dirPath +"Speech2Text/test1.mp3"))
 	if 0 == 1:
 		s2t = RecognizeSpeech()
 		s2t.prepareData(s2t.dirPath +"Speech2Text/audio/output_16000.flac")
