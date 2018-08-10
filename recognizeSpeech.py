@@ -53,21 +53,32 @@ class RecognizeSpeech:
 
 		return record[11:]
 
-	def convertMP3toFLAC(self, path):
-		print("COMMAND" + "ffmpeg -i " + path + " -ar 16000 " + path[:-4] +".flac")
-		os.system("ffmpeg -i " + path + " -sample_fmt s16 -ar 16000 " + path[:-4] +".flac")
+	def convertToFLAC(self, path):
+		if path[:-5] == ".flac":
+			print("COMMAND: ffmpeg -i " + path + " -ar 16000 " + path[:-5] +".flac")
+			os.system("ffmpeg -i " + path + " -sample_fmt s16 -ar 16000 " + path[:-5] +".flac")
+		elif path[:-4] == ".mp3" or path[:-4] == ".wav":
+			print("COMMAND: ffmpeg -i " + path + " -ar 16000 " + path[:-4] +".flac")
+			os.system("ffmpeg -i " + path + " -sample_fmt s16 -ar 16000 " + path[:-4] +".flac")
+		else:
+			print("COMMAND: ffmpeg -i " + path + " -ar 16000 " + path + ".flac")
+			os.system("ffmpeg -i " + path + " -sample_fmt s16 -ar 16000 " + path +".flac")
+		
 
 	def infer(self, audio_path):
-		self.mp3Location = self.dirPath + 'audio2infer/' + 'input.mp3'
-		self.flacLocation = self.dirPath + 'audio2infer/' + 'input.flac'
+		self.moveLocation = self.dirPath + 'audio2infer/output'
+		self.outputLocation = self.dirPath + 'audio2infer/output.flac'
 
+		# Removing previous directory
 		os.system('rm -R ' + self.dirPath + 'audio2infer/')
 		os.system('mkdir ' + self.dirPath + 'audio2infer/')
-		os.system('cp -R '+audio_path+' '+self.mp3Location)
 
-		self.convertMP3toFLAC(self.mp3Location)
 
-		self.prepareData(self.flacLocation)
+		os.system('cp -R '+audio_path+' '+self.moveLocation)
+
+		self.convertToFLAC(self.moveLocation)
+
+		self.prepareData(self.outputLocation)
 
 		self.runTest()
 
