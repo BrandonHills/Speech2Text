@@ -10,7 +10,9 @@ def main():
 		print("RETURN: " + s2t.infer(s2t.dirPath +"data/recognizeWav/inputData/input19.flac"))
 	if 0 == 0:
 		s2t = RecognizeSpeech()
-		s2t.prepareData(s2t.dirPath +"Speech2Text/audio/output.flac")
+		s2t.prepareData(s2t.dirPath +"Speech2Text/audio/output_16000.flac")
+		s2t.runTest()
+		print(s2t.returnText())
 
 
 
