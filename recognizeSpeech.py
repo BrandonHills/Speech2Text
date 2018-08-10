@@ -5,10 +5,10 @@ import numpy as np
 
 
 def main():
-	if 0 == 1:
-		s2t = RecognizeSpeech()
-		print("RETURN: " + s2t.infer(s2t.dirPath +"data/recognizeWav/inputData/input19.flac"))
 	if 0 == 0:
+		s2t = RecognizeSpeech()
+		print("RETURN: " + s2t.infer(s2t.dirPath +"data/recognizeWav/inputData/input1.flac"))
+	if 0 == 1:
 		s2t = RecognizeSpeech()
 		s2t.prepareData(s2t.dirPath +"Speech2Text/audio/output_16000.flac")
 		s2t.runTest()
@@ -55,7 +55,7 @@ class RecognizeSpeech:
 
 	def convertMP3toFLAC(self, path):
 		print("COMMAND" + "ffmpeg -i " + path + " -ar 16000 " + path[:-4] +".flac")
-		os.system("ffmpeg -i " + path + " -ar 16000 " + path[:-4] +".flac")
+		os.system("ffmpeg -i " + path + " -sample_fmt s16 -ar 16000 " + path[:-4] +".flac")
 
 	def infer(self, audio_path):
 		self.mp3Location = self.dirPath + 'audio2infer/' + 'input.mp3'
