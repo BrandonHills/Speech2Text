@@ -24,13 +24,6 @@ class RecognizeSpeech:
 		self.output = self.dirPath + "exp/tri2b/decode_nosp_tgsmall_recognizeWav/log/decode.1.log"
 
 
-
-	def Train(self, ):
-
-		# Create method which adds audio file one by one
-
-		# Create method which calls training
-
 	def prepareData(self, audioPath):
 		
 		print("Creating wav.scp file")
