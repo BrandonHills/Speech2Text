@@ -7,7 +7,7 @@ import numpy as np
 def main():
 
 	"""INFERENCE PIPELINE DEMO"""
-	if 0 == 0:
+	if 0 == 1:
 		s2t = RecognizeSpeech()
 		print("RETURN: " + s2t.infer(s2t.dirPath +"Speech2Text/demo.flac", "demo.flac"))
 	
