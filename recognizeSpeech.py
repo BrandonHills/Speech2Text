@@ -233,7 +233,8 @@ class RecognizeSpeech:
 
 
 	def train(self, audio_paths, texts, durations, numDuplicates):
-		os.system("../runPrepare.sh")
+		os.chdir(self.dirPath)
+		os.system(self.dirPath + "runPrepare.sh")
 
 
 
