@@ -76,9 +76,10 @@ class RecognizeSpeech:
 
 		os.system('cp -R '+audio_path+' '+self.moveLocation+name)
 
-		self.convertToFLAC(self.moveLocation)
+		self.convertToFLAC(self.moveLocation+name)
 
-		self.prepareData(self.outputLocation)
+		# self.prepareData(self.outputLocation)
+		self.prepareData(self.moveLocation+name)
 
 		self.runTest()
 
